@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="./style/bootstrap.css">
+    <link rel="stylesheet" href="./style/m-login.css">
+    <link rel="stylesheet" href="./style/home.css">
+    <link rel="stylesheet" type="text/css" href="./style/wangEditor.css">
+    <script type="text/javascript" src="script/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="./script/wangEditor.js"></script>
+    <script type="text/javascript" src="./script/xss.min.js"></script>
+    <script type="text/javascript" src="script/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/md5.js"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container clearfix">
+        <div class="logo">
+            <a href="./index.html">
+            </a>
+        </div>
+        <div class="nav-write" id="nav-write">
+            <a href="javascript:;"></a>
+        </div>
+        <div class="nav_userHead" id="navUserHead">
+            <a href="javascript:;">
+                <img src="./imgs/head.png">
+            </a>
+            <ul class="nav_set">
+                <li><a href="./home.html">主页</a></li>
+                <li><a href="./index.html">设置</a></li>
+                <li><a href="javascript:;">退出</a></li>
+            </ul>
+        </div>
+        <ul class="nav_login_list clearfix">
+            <li class="nav_register"><a href="javascript:;">注册</a></li>
+            <li>|</li>
+            <li class="nav_login"><a href="#login-box" data-toggle="modal">登录</a></li>
+        </ul>
+        <div class="nav_home">
+            <a href="./index.html"></a>
+        </div>
+    </div>
+</div>
+<div class="main clearfix" id="main">
+    <div class="leftCol" id="leftCol">
+        <div class="userInfo">
+            <div class="userHead">
+                <a href="javascript:;">
+                    街拍style
+                    <img src="./imgs/head.png">
+                </a>
+            </div>
+            <div class="addFriend" id="addFriend">
+                <input type="button" class="add" value="加为好友">
+                <input type="button" class="has toggle" value="已是好友">
+                <input type="button" class="remove toggle" value="删除好友">
+            </div>
+        </div>
+    </div>
+    <div class="contentBox" id="content">
+        <ul class="msgNav clearfix" id="msgNav">
+            <li class="msgAll active">全部</li>
+            <li class="msgWB">微博</li>
+            <li class="msgArticle">文章</li>
+        </ul>
+    </div>
+</div>
+<div class="modal fade" id="login-box" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close"
+                data-dismiss="modal" aria-hidden="true">
+            &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+            登录
+        </h4>
+    </div>
+    <form class="form-horizontal" id="loginForm" action="" method="post">
+        <div class="form-group">
+            <label for="username" class="col-sm-3 control-label">用户名</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="usergroup.userName" id="username" placeholder="用户名"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">密码</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" name="usergroup.userpassword" id="password" placeholder="密码"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-4 ">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="remember"/>记住密码
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-8">
+                <button type="button" class="btn btn-primary" id="loginbtn">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="footer">Copyright © QINGWEIBO 2016</div>
+<script type="text/javascript" src="script/home.js"></script>
+<script type="text/javascript" src="script/m-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+$nav_a: #33475f;
+
+.tips{
+  background: rgba(#fff, 0.6);
+  color: $nav_a;
+  padding: 10px 10px 5px;
+  position: fixed;
+  font-size: 16px;
+  border-radius: 5px;
+  vertical-align: middle;
+  visibility: hidden;
+  z-index: 9999;
+  img{
+    vertical-align: middle;
+    margin-top: -10px;
+    margin-right: 5px;
+  }
+}

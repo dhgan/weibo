@@ -1,0 +1,23 @@
+.login,.reg{
+    display: inline-block;
+}
+.login,.reg{
+    margin: 0 10px;
+}
+.modal{
+    width: 400px;
+    height: 300px;
+    border: 1px solid gray;
+    margin: 100px auto;
+    border-radius: 10px;
+    background-color: white;
+}
+.form-horizontal{
+    margin: 20px auto 0 auto;
+}
+.form-control{
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.btn{
+    width:200px;
+}

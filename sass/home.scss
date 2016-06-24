@@ -1,0 +1,1092 @@
+
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;
+
+@import "compass";
+@import "compass/reset";
+@import "compass/utilities";
+
+.clearfix{
+  @include pie-clearfix;
+}
+$color1: #F2EEE8;
+$color2: #FFFBF5;
+$a_color: #1b95e0;
+$a_hover_color: #2B7BB9;
+$nav_a: #33475f;
+$border_color: #e1e8ed;
+$bg_color: #367fa9;
+$D2: #D2D2D2;
+$E8: #E8E8E8;
+$info_bg: #80A8CC;
+
+$font-family: 'Arial','Microsoft YaHei';
+
+html{
+  height: 100%;
+}
+body {
+  background: image-url("bg.png");
+  font: 14px/1.5 $font-family;
+  min-width: 860px;
+  min-height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+.fullScreenBody{
+  height: 100%;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color: $info_bg;
+  &:hover, &:active {
+    color: $a_hover_color;
+  }
+}
+b{
+  font-weight: bold;
+}
+i{
+  font-style: italic;
+}
+textarea{
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+#header{
+  background-color: $color2;
+  line-height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 1px 2px rgba($nav_a,0.5);
+  z-index: 999;
+  .container{
+    max-width: 1180px;
+    min-width: 860px;
+    margin: 0 auto;
+    @media only screen and(max-width: 1200px) {
+      width: 1120px;
+    }
+    @media only screen and(max-width: 1119px) {
+      width: 980px;
+    }
+    @media only screen and(max-width: 990px) {
+      width: 95%;
+    }
+    .weibo,.article{
+      float: right;
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #ccc;
+      color: black;
+      border-radius: 5px;
+      margin: 10px 20px;
+      box-shadow: 1px 1px 2px #ccc;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+.logo {
+  float: left;
+  height: 50px;
+  font-size: 0;
+  a{
+    background: image-url("logo1.png") no-repeat left;
+    display: inline-block;
+    height: 40px;
+    margin-top: 5px;
+    width: 200px;
+  }
+}
+
+.nav-write{
+  float: right;
+  font-size: 0;
+  height: 50px;
+  a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 10px 0;
+    vertical-align: middle;
+    background: image-url('icon/write.png') no-repeat center;
+    &:hover{
+      background: image-url('icon/write_hover.png') no-repeat center;
+    }
+  }
+}
+.nav_home{
+  text-align: center;
+  font-size: 0;
+  margin: 0 auto;
+  height: 50px;
+  a{
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    background: image-url('icon/home.png') no-repeat center;
+    &:hover{
+      background: image-url('icon/home_hover.png') no-repeat center;
+    }
+  }
+}
+
+.nav_login_list{
+  display: none;
+  color: $nav_a;
+  float: right;
+  li{
+    display: inline-block;
+    vertical-align: middle;
+    a{
+      float: left;
+      height: 50px;
+      padding: 0 6px;
+    }
+  }
+}
+
+.nav_userHead{
+  float: right;
+  height: 50px;
+  font-size: 0;
+  position: relative;
+  margin-right: 15px;
+  &>a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 7px 0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  img{
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.nav_set{
+  width: 80px;
+  position: absolute;
+  background: $color2;
+  display: none;
+  left: -40px;
+  top: 55px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px rgba(#66757f,0.5);
+  padding: 5px 0;
+  border: 1px solid $D2;
+  font-size: 14px;
+  li{
+    display: block;
+    &:not(:last-child){
+      border-bottom: 1px solid $border_color;
+    }
+    a{
+      text-align: center;
+      display: block;
+      line-height: 20px;
+      padding: 5px;
+      color: $nav_a;
+      &:hover{
+        color: white;
+        background: $a_hover_color;
+      }
+    }
+  }
+  &:before{
+    content: "";
+    height: 0;
+    border-bottom: 10px solid $color2;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    left: 70%;
+    top: -10px;
+    margin-left: -10px;
+    z-index: 10;
+  }
+  &:after{
+    content: "";
+    height: 0;
+    border-bottom: 12px solid $D2;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    left: 70%;
+    top: -12px;
+    margin-left: -12px;
+    z-index: 9;
+  }
+}
+
+
+
+
+
+
+#gdh-msg, #gdh-article{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+#gdh-article{
+  ul{
+    list-style:disc;
+  }
+  ol{
+    list-style: decimal;
+  }
+}
+.shadowBox{
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  position: absolute;
+}
+.popMsgBox{
+  margin: 120px auto;
+  width: 600px;
+  .msgHead{
+    height: 40px;
+    line-height: 40px;
+    background: $color2;
+    position: relative;
+    @include border-top-radius(10px);
+    h3{
+      text-align: center;
+      font-size: 16px;
+      font-family: "Microsoft YaHei UI",sans-serif;
+      color: $nav_a;
+      cursor: move;
+    }
+    i{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: image-url("./icon/delete.png");
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+      &:hover{
+        background: image-url("./icon/delete_hover.png");
+      }
+    }
+  }
+  .msgTitle{
+    padding: 6px 20px;
+    background: #FFF;
+    position: relative;
+    border-top: 1px solid #ccc;
+    input{
+      width: 100%;
+      border: none;
+      height: 28px;
+      font-size: 16px;
+      font-family: "Microsoft YaHei UI",sans-serif;
+      padding: 0;
+      outline: none;
+    }
+  }
+  .msgTitleFullScreen{
+    position: fixed;
+    width: 598px;
+    top: -1px;
+    left: calc(50% - 319px);
+    z-index: 10001;
+  }
+  .msgBox{
+    @include border-top-radius(0);
+    @include border-bottom-radius(10px);
+  }
+}
+
+
+.main{
+  width: 860px;
+  padding-top: 70px;
+  /*margin-left: calc(40% - 301px);*/
+  margin: 0 auto;
+}
+.leftCol{
+  width: 240px;
+  margin-right: 20px;
+  float: left;
+  .userInfo{
+    background: darken($info_bg, 5%);
+    padding: 120px 10px 10px;
+    border-radius: 6px;
+    .userHead{
+      margin: 20px auto;
+      position: relative;
+      text-align: center;
+      a{
+        font-size: 16px;
+        font-family: "Microsoft YaHei UI", sans-serif;
+        color: white;
+      }
+      img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        margin-left: -50px;
+      }
+    }
+    .addFriend{
+      input{
+        cursor: pointer;
+        font-family: $font-family;
+        border: none;
+        outline: none;
+        display: none;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background: darken(#6C94B8, 8%);
+        width: 121px;
+        height: 41px;
+        line-height: 41px;
+        border-radius: 20px;
+        margin: 0 auto;
+        &:hover{
+          background: $a_hover_color;
+        }
+        &.show{
+          display: block;
+        }
+        &.remove{
+          background: #E81C4F;
+        }
+      }
+    }
+  }
+}
+.contentBox{
+  margin-left: 260px;
+}
+
+/*send msg box*/
+.msgBox,.commentBox{
+  width: 600px;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 1px $border_color;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  .msgTxt{
+    font: 14px $font-family;
+    line-height: 20px;
+    min-height: 90px;
+    padding: 8px 6px 0 6px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    resize: none;
+    border: 1px solid rgba(gray,0.5);
+    overflow: hidden;
+    &:focus{
+      box-shadow: 0 0 5px $info_bg;
+    }
+  }
+  .msgAdd{
+    float: left;
+    &>li{
+      float: left;
+      color: $nav_a;
+      cursor: pointer;
+      position: relative;
+      padding: 0 5px 10px;
+      &:hover{
+        color: $a_hover_color;
+        &:before{
+          color: $nav_a;
+        }
+      }
+      i{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        text-indent: -999em;
+        margin-right: 5px;
+      }
+      input{
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+    }
+    li.msgEmoji{
+      position: relative;
+      i{
+        background: image_url("icon/emoji.png") no-repeat center;
+      }
+      &:hover{
+        i{
+          background: image_url("icon/emoji_hover.png") no-repeat center;
+        }
+      }
+    }
+    li.msgPhoto{
+      i{
+        background: image_url("icon/msgPhoto.png") no-repeat center;
+      }
+      &:hover{
+        i {
+          background: image_url("icon/msgPhoto_hover.png") no-repeat center;
+        }
+      }
+    }
+    li#article{
+      i{
+        background: image_url("icon/article.png") no-repeat center;
+      }
+      &:hover{
+        i {
+          background: image_url("icon/article_hover.png") no-repeat center;
+        }
+      }
+      &:before{
+        content: "|";
+        margin-right: 10px;
+      }
+    }
+  }
+  .msgSend{
+    float: right;
+    input{
+      cursor: pointer;
+      padding: 6px 15px;
+      font-size: 16px;
+      font-family: "Microsoft YaHei UI",sans-serif;
+      background: #0084B4;
+      border: none;
+      color: white;
+      outline: none;
+      letter-spacing: 2px;
+      border-radius: 5px;
+      opacity: 1;
+      filter: alpha(opacity=100);
+      &:hover{
+        background: $a_hover_color;
+      }
+    }
+    strong{
+      font-size: 20px;
+      color: $nav_a;
+      padding-right: 10px;
+    }
+    .disabled{
+      cursor: auto;
+      opacity: 0.2;
+      filter: alpha(opacity=20);
+    }
+    .red{
+      color: red;
+    }
+  }
+}
+.emojiSet{
+  display: none;
+  position: absolute;
+  z-index: 9;
+  background: $color2;
+  left: 0px;
+  top: 26px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba($nav_a,0.5);
+  border: 1px solid $D2;
+  padding: 15px 15px;
+  width: 351px;
+  &:before{
+    content: "";
+    height: 0;
+    border-bottom: 10px solid $color2;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    left: 26px;
+    top: -10px;
+    margin-left: -10px;
+    z-index: 10;
+  }
+  &:after{
+    content: "";
+    height: 0;
+    border-bottom: 12px solid $D2;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    left: 26px;
+    top: -12px;
+    margin-left: -12px;
+    z-index: 9;
+  }
+  li{
+    width: 30px;
+    height: 30px;
+    float: left;
+    border: 1px solid $E8;
+    margin: -1px 0 0 -1px;
+    padding: 2px;
+    position: relative;
+    &:hover{
+      border-color: $bg_color;
+      z-index: 2;
+    }
+    a{
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  @for $i from 1 through 50{
+    li:nth-child(#{$i}){
+      a{
+        background: image_url("icon/fFace.png") no-repeat 0 0-$i*30px+30px;
+      }
+    }
+  }
+}
+.msgPhotoShow{
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms ease-in-out 300ms;
+  div{
+    width: 107px;
+    height: 108px;
+    margin: 4px;
+    float: left;
+    line-height: 100px;
+    font-size: 0;
+    text-align: center;
+    background: #ccd6dd;
+    position: relative;
+    overflow: hidden;
+    img{
+      vertical-align: middle;
+    }
+    span{
+      display: none;
+      position: absolute;
+      cursor: pointer;
+      top: 2px;
+      right: 2px;
+      width: 20px;
+      height: 20px;
+      background: image_url("icon/delete.png") no-repeat center;
+      &:hover{
+        background: image_url("icon/delete_hover.png") no-repeat center;
+      }
+    }
+    &:hover{
+      span{
+        display: block;
+      }
+    }
+  }
+}
+
+.msgNav{
+  margin-bottom: 10px;
+  background: #fff;
+  color: $nav_a;
+  height: 31px;
+  border: 1px solid darken($border_color, 5%);
+  li{
+    cursor: pointer;
+    float: left;
+    padding: 5px 10px;
+    margin-right: 1px;
+    &:hover,&.active{
+      background: $bg_color;
+      color: #fff;
+    }
+  }
+}
+
+
+
+/*msg list*/
+.msgListContentBox{
+  border: 1px solid darken($border_color, 5%);
+  padding: 20px 15px 0px 75px;
+  width: 600px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative;
+  background: #fff;
+  .msgDel{
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: image_url("icon/msgDel.png") no-repeat center;
+    &:hover, &.active{
+      background: image_url("icon/msgDel_hover.png") no-repeat center;
+    }
+    .msgDelTips{
+      display: none;
+      position: absolute;
+      background: #fff;
+      width: 189px;
+      left: -90px;
+      border: 1px solid #ccc;
+      box-shadow:0 4px 20px 1px rgba(0,0,0,0.2);
+      border-radius: 3px;
+      color: $nav_a;
+      height: 90px;
+      top: -100px;
+      z-index: 999;
+      box-sizing: border-box;
+      padding: 16px;
+      &:before{
+        content: "";
+        height: 0;
+        border-top: 10px solid $color2;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -4px;
+        z-index: 10;
+      }
+      &:after{
+        content: "";
+        height: 0;
+        border-top: 12px solid $D2;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        position: absolute;
+        left: 50%;
+        bottom: -12px;
+        margin-left: -6px;
+        z-index: 9;
+      }
+      p{
+        margin-bottom: 16px;
+        text-align: center;
+      }
+      div{
+        margin: 0 9px;
+        a{
+          &:nth-child(1){
+            margin-right: 11px;
+          }
+          width: 60px;
+          line-height: 24px;
+          display: inline-block;
+          background: $a_color;
+          text-align: center;
+          color: #fff;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  &:hover{
+    .msgDel{
+      display: block;
+    }
+  }
+  .msgListContent{
+    padding: 4px;
+    .msgListUserHead{
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      float: left;
+      margin-left: -60px;
+    }
+    .msgListUserName{
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .msgListTime{
+      color: $nav_a;
+      &:hover{
+        color: $a_hover_color;
+      }
+    }
+    .msgListBody{
+      transition: height 300ms ease-in-out 300ms;
+      margin: 5px 0;
+      line-height: 23px;
+      img{
+        max-width: 100%;
+      }
+      .emoji{
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+      }
+      h2{
+        margin: 20px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+      }
+      p{
+        margin: 15px 0;
+      }
+      a.pull{
+        display: block;
+        text-align: right;
+      }
+      .msgPull{
+          position: fixed;
+          bottom: 40px;
+          background: $a_hover_color;
+          padding: 5px 10px;
+          color: #fff;
+          border-radius: 5px;
+      }
+    }
+    .msgListBodyDemo{
+      h2{
+        margin-top: 10px;
+        font-size: 18px;
+        text-align: center;
+        color: $nav_a;
+        font-weight: bold;
+      }
+      div{
+        float: left;
+        width: 120px;
+        height: 120px;
+        margin:0 10px 10px 0;
+        overflow: hidden;
+      }
+    }
+    .msgSpread{
+      a{
+        text-align: center;
+        display: block;
+        width: 66px;
+        height: 30px;
+        line-height: 30px;
+        background: $a_hover_color;
+        color: #fff;
+        border-radius: 5px;
+        margin: 10px auto;
+        box-shadow: 1px 1px 2px $a_hover_color;
+      }
+    }
+    .msgReply{
+      background: darken(#F7F7F7, 3%);
+      padding: 5px 10px;
+      color: #999;
+      margin: 0 -4px;
+      a{
+        color: $nav_a;
+        &:hover{
+          color: $a_hover_color;
+        }
+      }
+    }
+    .li_1_w{
+      width: 332px;
+      img{
+        width: 100%;
+      }
+    }
+    .li_1_h{
+      height: 332px;
+      img{
+        height: 100%;
+      }
+    }
+    [class^="li_2"],.li_5_1,.li_5_2{
+      width: 248px;
+      height: 248px;
+      line-height: 248px;
+    }
+    [class^="li_4"],[class^="li_7"],[class^="li_8"]{
+      width: 123px;
+      height: 123px;
+      line-height: 123px;
+    }
+    [class^="li_3"],.li_5_4,.li_5_5,[class^="li_6"],.li_7_2,.li_7_3,[class^="li_9"]{
+      width: 165px;
+      height: 165px;
+      line-height: 165px;
+    }
+    .li_3_1,.li_5_3,.li_6_4,.li_9_1,.li_9_4,.li_9_7{
+      width: 164px;
+      height: 164px;
+      line-height: 164px;
+    }
+    .li_4_1,.li_8_1{
+      width: 373px;
+      height: 373px;
+      line-height: 373px;
+    }
+    .li_6_1,.li_7_1{
+      width: 331px;
+      height: 331px;
+      line-height: 331px;
+    }
+    [class^="li_"]{
+      float: left;
+      font-size: 0;
+      margin: 2px 0 0 2px;
+      overflow: hidden;
+      background-color: lighten(#ccd6dd,10%);
+      cursor: image_url("icon/big.cur"), auto;
+      text-align: center;
+      vertical-align: middle;
+      img{
+        vertical-align: middle;
+      }
+    }
+    .big_photo_show{
+      text-align: center;
+      cursor: image-url("icon/small.cur"), auto;
+      background: #f2f2f5;
+      font-size: 0;
+      margin: 10px 0;
+    }
+    .msgListPhotoShow{
+      margin: 0 -2px;
+    }
+    .li_small{
+      width: 52px;
+      height: 52px;
+      margin: 0;
+      border: 2px solid transparent;
+      cursor: pointer;
+      line-height: 52px;
+      font-size: 0;
+      vertical-align: middle;
+      img{
+        vertical-align: middle;
+      }
+      &:hover,&.selected{
+        border-color: $a_color;
+      }
+    }
+  }
+}
+.msgListContent{
+  .msgLike{
+    i{
+      background: image_url("icon/like.png") no-repeat center;
+    }
+    &:hover{
+      i{
+        background: image_url("icon/like_hover.png") no-repeat center;
+      }
+      span{
+        color: red;
+      }
+    }
+  }
+  .msgComment{
+    position: relative;
+    i{
+      background: image_url("icon/comment.png") no-repeat center;
+    }
+    &:hover{
+      i{
+        background: image_url("icon/comment_hover.png") no-repeat center;
+      }
+    }
+    b{
+      display: none;
+      position: absolute;
+      border-bottom: 10px solid darken(#F7F7F7, 5%);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      bottom: -6px;
+      left: 25%;
+    }
+  }
+  .msgListFooter{
+    li{
+      float: right;
+      cursor: pointer;
+      margin: 5px 0 0 10px;
+      color: $nav_a;
+      line-height: 20px;
+      i{
+        display: inline-block;
+        text-indent: -999em;
+        width: 20px;
+        height: 20px;
+      }
+      &:hover{
+        color: $a_hover_color;
+      }
+    }
+  }
+}
+.commentTotal{
+  margin-left:-60px;
+  &>.commentBox{
+    padding-left: 65px;
+    padding-top: 10px;
+    img{
+      width: 32px;
+      float: left;
+      margin-left: -50px;
+      border-radius: 5px;
+    }
+  }
+}
+.commentBox{
+  width: 100%;
+  background: darken(#F7F7F7, 3%);
+  border-radius: 0;
+  padding: 5px;
+  .msgTxt{
+    padding: 5px 5px 0 5px;
+    height: 30px;
+    min-height: 30px;
+    margin-bottom: 0;
+  }
+  .msgAdd{
+    li.msgEmoji{
+      margin: 5px 0 0 5px;
+    }
+  }
+  .msgSend{
+    input{
+      padding: 3px 10px;
+    }
+    strong{
+      font-size:14px;
+    }
+  }
+}
+.commentList{
+  background-color: darken(#F7F7F7, 3%);
+  margin-bottom: 10px;
+  padding:0 0 20px 60px;
+  font-size: 13px;
+  &>li{
+    padding: 5px;
+    margin-bottom: -1px;
+    border-top: 1px solid darken(#F7F7F7, 15%);
+    border-bottom: 1px solid darken(#F7F7F7, 15%);
+  }
+  .commentMsg,.commentFooter{
+    margin-left: 30px;
+    img{
+      width: 32px;
+      float: left;
+      margin-left: -40px;
+      border-radius: 5px;
+    }
+  }
+  .commentFooter{
+    color: #999;
+    a{
+      float: right;
+      margin-right: 10px;
+    }
+  }
+}
+#footer{
+  background-color: $color2;
+  line-height: 50px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  text-align: center;
+  color: $nav_a;
+}
+.msgEmpty{
+  background: #fff;
+  border: 1px solid darken($border_color, 5%);
+  padding: 30px 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: $nav_a;
+}
+
+@keyframes load {
+  0%{
+    transform: rotate(0deg);
+  }
+  12.5%{
+    transform: rotate(45deg);
+  }
+  25%{
+    transform: rotate(90deg);
+  }
+  37.5%{
+    transform: rotate(135deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  62.5%{
+    transform: rotate(225deg);
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+  87.5%{
+    transform: rotate(315deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.msgLoad{
+  background: #fff;
+  border: 1px solid darken($border_color, 5%);
+  margin: 10px 0;
+  text-align: center;
+  color: $nav_a;
+  vertical-align: middle;
+  line-height: 31px;
+  img{
+    vertical-align: middle;
+    margin-right: 5px;
+    animation: load 1s linear infinite;
+  }
+}
+.imgLoad{
+  position: fixed;
+  background: rgba(#fff, 0.8);
+  height: 20px;
+  width: 20px;
+  border-radius: 2px;
+  z-index: 9999;
+  img{
+    animation: load 1s linear infinite;
+  }
+}
+@import "tips";

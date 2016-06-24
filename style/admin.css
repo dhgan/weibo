@@ -1,0 +1,549 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: url('../imgs/bg.png?1465733283');
+  font: 14px/1.5 "Arial", "Microsoft YaHei";
+  min-width: 600px;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.fullScreenBody {
+  height: 100%;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #80A8CC;
+}
+a:hover, a:active {
+  color: #2B7BB9;
+}
+
+b {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
+textarea {
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.main {
+  width: 1245px;
+  margin: 0px auto 0;
+  height: 100%;
+}
+
+.content {
+  width: 620px;
+  float: left;
+  height: 100%;
+}
+.content:nth-child(1) {
+  margin-right: 5px;
+}
+.content .contentHead {
+  line-height: 26px;
+  margin: 4px 260px;
+  font-size: 18px;
+  text-align: center;
+  background: #367fa9;
+  color: white;
+  border-radius: 10px;
+}
+
+.contentBox {
+  height: calc(100% - 34px);
+  overflow-y: scroll;
+  position: relative;
+}
+
+.contentHot {
+  height: calc(100% - 34px);
+  overflow-y: scroll;
+}
+
+.msgPhotoShow {
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms ease-in-out 300ms;
+}
+.msgPhotoShow div {
+  width: 107px;
+  height: 108px;
+  margin: 4px;
+  float: left;
+  line-height: 100px;
+  font-size: 0;
+  text-align: center;
+  background: #ccd6dd;
+  position: relative;
+  overflow: hidden;
+}
+.msgPhotoShow div img {
+  vertical-align: middle;
+}
+.msgPhotoShow div span {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  background: url('../imgs/icon/delete.png?1465144093') no-repeat center;
+}
+.msgPhotoShow div span:hover {
+  background: url('../imgs/icon/delete_hover.png?1465144075') no-repeat center;
+}
+.msgPhotoShow div:hover span {
+  display: block;
+}
+
+/*msg list*/
+.msgListContentBox {
+  border: 1px solid #d1dce3;
+  padding: 20px 15px 0px 75px;
+  width: 600px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative;
+  background: #fff;
+}
+.msgListContentBox .msgOperate {
+  padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: #1b95e0;
+  color: white;
+  border-radius: 6px;
+}
+.msgListContentBox .msgOperate:hover {
+  background: #2B7BB9;
+}
+.msgListContentBox .msgListContent {
+  padding: 4px;
+}
+.msgListContentBox .msgListContent .msgListUserHead {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  float: left;
+  margin-left: -60px;
+}
+.msgListContentBox .msgListContent .msgListUserName {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.msgListContentBox .msgListContent .msgListTime {
+  color: #33475f;
+}
+.msgListContentBox .msgListContent .msgListTime:hover {
+  color: #2B7BB9;
+}
+.msgListContentBox .msgListContent .msgListBody {
+  transition: height 300ms ease-in-out 300ms;
+  margin: 5px 0;
+  line-height: 23px;
+}
+.msgListContentBox .msgListContent .msgListBody img {
+  max-width: 100%;
+}
+.msgListContentBox .msgListContent .msgListBody .emoji {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+.msgListContentBox .msgListContent .msgListBody h2 {
+  margin: 20px;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+}
+.msgListContentBox .msgListContent .msgListBody p {
+  margin: 15px 0;
+}
+.msgListContentBox .msgListContent .msgListBody a.pull {
+  display: block;
+  text-align: right;
+}
+.msgListContentBox .msgListContent .msgListBody .msgPull {
+  position: fixed;
+  bottom: 40px;
+  background: #2B7BB9;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+.msgListContentBox .msgListContent .msgListBodyDemo {
+  margin-top: 10px;
+}
+.msgListContentBox .msgListContent .msgListBodyDemo h2 {
+  font-size: 18px;
+  text-align: center;
+  color: #33475f;
+  font-weight: bold;
+}
+.msgListContentBox .msgListContent .msgListBodyDemo div {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin: 0 10px 10px 0;
+  overflow: hidden;
+}
+.msgListContentBox .msgListContent .msgSpread a {
+  text-align: center;
+  display: block;
+  width: 66px;
+  height: 30px;
+  line-height: 30px;
+  background: #2B7BB9;
+  color: #fff;
+  border-radius: 5px;
+  margin: 10px auto;
+  box-shadow: 1px 1px 2px #2B7BB9;
+}
+.msgListContentBox .msgListContent .msgReply {
+  background: #efefef;
+  padding: 5px 10px;
+  color: #999;
+  margin: 0 -4px;
+}
+.msgListContentBox .msgListContent .msgReply a {
+  color: #33475f;
+}
+.msgListContentBox .msgListContent .msgReply a:hover {
+  color: #2B7BB9;
+}
+.msgListContentBox .msgListContent .li_1_w {
+  width: 332px;
+}
+.msgListContentBox .msgListContent .li_1_w img {
+  width: 100%;
+}
+.msgListContentBox .msgListContent .li_1_h {
+  height: 332px;
+}
+.msgListContentBox .msgListContent .li_1_h img {
+  height: 100%;
+}
+.msgListContentBox .msgListContent [class^="li_2"], .msgListContentBox .msgListContent .li_5_1, .msgListContentBox .msgListContent .li_5_2 {
+  width: 248px;
+  height: 248px;
+  line-height: 248px;
+}
+.msgListContentBox .msgListContent [class^="li_4"], .msgListContentBox .msgListContent [class^="li_7"], .msgListContentBox .msgListContent [class^="li_8"] {
+  width: 123px;
+  height: 123px;
+  line-height: 123px;
+}
+.msgListContentBox .msgListContent [class^="li_3"], .msgListContentBox .msgListContent .li_5_4, .msgListContentBox .msgListContent .li_5_5, .msgListContentBox .msgListContent [class^="li_6"], .msgListContentBox .msgListContent .li_7_2, .msgListContentBox .msgListContent .li_7_3, .msgListContentBox .msgListContent [class^="li_9"] {
+  width: 165px;
+  height: 165px;
+  line-height: 165px;
+}
+.msgListContentBox .msgListContent .li_3_1, .msgListContentBox .msgListContent .li_5_3, .msgListContentBox .msgListContent .li_6_4, .msgListContentBox .msgListContent .li_9_1, .msgListContentBox .msgListContent .li_9_4, .msgListContentBox .msgListContent .li_9_7 {
+  width: 164px;
+  height: 164px;
+  line-height: 164px;
+}
+.msgListContentBox .msgListContent .li_4_1, .msgListContentBox .msgListContent .li_8_1 {
+  width: 373px;
+  height: 373px;
+  line-height: 373px;
+}
+.msgListContentBox .msgListContent .li_6_1, .msgListContentBox .msgListContent .li_7_1 {
+  width: 331px;
+  height: 331px;
+  line-height: 331px;
+}
+.msgListContentBox .msgListContent [class^="li_"] {
+  float: left;
+  font-size: 0;
+  margin: 2px 0 0 2px;
+  overflow: hidden;
+  background-color: #ebeff1;
+  cursor: url('../imgs/icon/big.cur?1465442767'), auto;
+  text-align: center;
+  vertical-align: middle;
+}
+.msgListContentBox .msgListContent [class^="li_"] img {
+  vertical-align: middle;
+}
+.msgListContentBox .msgListContent .big_photo_show {
+  text-align: center;
+  cursor: url('../imgs/icon/small.cur?1465442652'), auto;
+  background: #f2f2f5;
+  font-size: 0;
+  margin: 10px 0;
+}
+.msgListContentBox .msgListContent .msgListPhotoShow {
+  margin: 0 -2px;
+}
+.msgListContentBox .msgListContent .li_small {
+  width: 52px;
+  height: 52px;
+  margin: 0;
+  border: 2px solid transparent;
+  cursor: pointer;
+  line-height: 52px;
+  font-size: 0;
+  vertical-align: middle;
+}
+.msgListContentBox .msgListContent .li_small img {
+  vertical-align: middle;
+}
+.msgListContentBox .msgListContent .li_small:hover, .msgListContentBox .msgListContent .li_small.selected {
+  border-color: #1b95e0;
+}
+
+.msgListContent .msgLike i {
+  background: url('../imgs/icon/like.png?1465451676') no-repeat center;
+}
+.msgListContent .msgLike:hover i {
+  background: url('../imgs/icon/like_hover.png?1465451689') no-repeat center;
+}
+.msgListContent .msgLike:hover span {
+  color: red;
+}
+.msgListContent .msgComment {
+  position: relative;
+}
+.msgListContent .msgComment i {
+  background: url('../imgs/icon/comment.png?1465451700') no-repeat center;
+}
+.msgListContent .msgComment:hover i {
+  background: url('../imgs/icon/comment_hover.png?1465451734') no-repeat center;
+}
+.msgListContent .msgComment b {
+  display: none;
+  position: absolute;
+  border-bottom: 10px solid #eaeaea;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: -6px;
+  left: 25%;
+}
+.msgListContent .msgListFooter li {
+  float: right;
+  cursor: pointer;
+  margin: 5px 0 0 10px;
+  color: #33475f;
+  line-height: 20px;
+}
+.msgListContent .msgListFooter li i {
+  display: inline-block;
+  text-indent: -999em;
+  width: 20px;
+  height: 20px;
+}
+.msgListContent .msgListFooter li:hover {
+  color: #2B7BB9;
+}
+
+.commentTotal {
+  margin-left: -60px;
+}
+.commentTotal > .commentBox {
+  padding-left: 65px;
+  padding-top: 10px;
+}
+.commentTotal > .commentBox img {
+  width: 32px;
+  float: left;
+  margin-left: -50px;
+  border-radius: 5px;
+}
+
+.commentBox {
+  width: 100%;
+  background: #efefef;
+  border-radius: 0;
+  padding: 5px;
+}
+.commentBox .msgTxt {
+  padding: 5px 5px 0 5px;
+  height: 30px;
+  min-height: 30px;
+  margin-bottom: 0;
+}
+.commentBox .msgAdd li.msgEmoji {
+  margin: 5px 0 0 5px;
+}
+.commentBox .msgSend input {
+  padding: 3px 10px;
+}
+.commentBox .msgSend strong {
+  font-size: 14px;
+}
+
+.commentList {
+  background-color: #efefef;
+  margin-bottom: 10px;
+  padding: 0 0 20px 60px;
+  font-size: 13px;
+}
+.commentList > li {
+  padding: 5px;
+  margin-bottom: -1px;
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+}
+.commentList .commentMsg, .commentList .commentFooter {
+  margin-left: 30px;
+}
+.commentList .commentMsg img, .commentList .commentFooter img {
+  width: 32px;
+  float: left;
+  margin-left: -40px;
+  border-radius: 5px;
+}
+.commentList .commentFooter {
+  color: #999;
+}
+.commentList .commentFooter a {
+  float: right;
+  margin-right: 10px;
+}
+
+.msgEmpty {
+  background: #fff;
+  border: 1px solid #d1dce3;
+  padding: 30px 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #33475f;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  37.5% {
+    transform: rotate(135deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62.5% {
+    transform: rotate(225deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  87.5% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.msgLoad {
+  background: #fff;
+  border: 1px solid #d1dce3;
+  margin: 10px 0;
+  text-align: center;
+  color: #33475f;
+  vertical-align: middle;
+  line-height: 31px;
+}
+.msgLoad img {
+  vertical-align: middle;
+  margin-right: 5px;
+  animation: load 1s linear infinite;
+}
+
+.imgLoad {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+  height: 20px;
+  width: 20px;
+  border-radius: 2px;
+  z-index: 9999;
+}
+.imgLoad img {
+  animation: load 1s linear infinite;
+}

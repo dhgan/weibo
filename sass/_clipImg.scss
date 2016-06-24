@@ -1,0 +1,92 @@
+$color1: #F2EEE8;
+$color2: #FFFBF5;
+$a_color: #1b95e0;
+$a_hover_color: #2B7BB9;
+$nav_a: #33475f;
+$border_color: #e1e8ed;
+$bg_color: #367fa9;
+$D2: #D2D2D2;
+$E8: #E8E8E8;
+$info_bg: #80A8CC;
+
+$font-family: 'Arial','Microsoft YaHei';
+
+.clipHead{
+  background: #fff;
+  padding: 20px;
+  position: relative;
+}
+.clipInput{
+  height: 30px;
+  position: relative;
+  line-height: 28px;
+  a{
+    height: 28px;
+    width: 76px;
+    text-align: center;
+    background: $a_hover_color;
+    color: #fff;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  input{
+    font-size: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 28px;
+    width: 76px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  span{
+    width: 180px;
+    text-align: center;
+    float: right;
+    color: $nav_a;
+  }
+}
+.clipImg{
+  vertical-align: middle;
+  height: 360px;
+  width: 360px;
+  float: left;
+  background: #f2f2f5;
+  overflow: hidden;
+}
+.imgDemo{
+  float: right;
+  width: 180px;
+  height: 180px;
+  background: #f2f2f5;
+  line-height: 180px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0;
+  img{
+    width: 150px;
+    height: 150px;
+    vertical-align: middle;
+  }
+}
+.msgFooter{
+  position: relative;
+  background: $color2;
+  line-height: 30px;
+  padding: 10px;
+  @include border-bottom-radius(10px);
+  text-align: center;
+  a{
+    display: inline-block;
+    padding: 5px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .msgPublish{
+    color: white;
+    background: #0084B4;
+    &:hover{
+      background: $a_hover_color;
+    }
+  }
+}
